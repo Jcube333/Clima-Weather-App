@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "name": "clima-weather-app",
   "version": "1.0.0",
   "description": "",
@@ -10,5 +11,8 @@
     "Jcube333"
   ],
   "author": "Jcube333",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "postman-request": "^2.88.1-postman.31"
+  }
 }
