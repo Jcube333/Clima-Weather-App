@@ -2,22 +2,24 @@ import request from "postman-request";
 import { keys } from "../keys.js";
 
 export const geoCode = (location, callback) => {
-  const url2 =
+  const url =
     "http://api.positionstack.com/v1/forward?access_key=" +
     keys.geoKey +
     "&query=" +
     location +
     "&limit=1";
 
-  request({ url: url2, json: true }, (error, response) => {
+  //Using shorthand object property syntax for url
+  //Also, destructuring response to get body as a standAlone variable
+  request({ url, json: true }, (error, { body }) => {
     if (error) {
       callback("Unable to connect to Geolocation Service", undefined);
-    } else if (response.body.error) {
-      callback(response.body.error, undefined);
+    } else if (body.error) {
+      callback(body.error, undefined);
     } else {
       const coordinates = {
-        lat: response.body.data[0].latitude,
-        lon: response.body.data[0].longitude,
+        lat: body.data[0].latitude,
+        lon: body.data[0].longitude,
       };
       callback(undefined, coordinates);
     }
