@@ -1,5 +1,5 @@
 import request from "postman-request";
-import { keys } from "../keys.js";
+import { keys } from "../../keys.js";
 
 //Using JS object destructuring to avoid writing coodinates.lat and coordinates.lon
 export const weather = ({ lat, lon }, callback) => {

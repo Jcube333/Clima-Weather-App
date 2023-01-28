@@ -1,5 +1,5 @@
 import request from "postman-request";
-import { keys } from "../keys.js";
+import { keys } from "../../keys.js";
 
 export const geoCode = (location, callback) => {
   const url =
@@ -14,8 +14,8 @@ export const geoCode = (location, callback) => {
   request({ url, json: true }, (error, { body }) => {
     if (error) {
       callback("Unable to connect to Geolocation Service", undefined);
-    } else if (body.error) {
-      callback(body.error, undefined);
+    } else if (body.data.length == 0) {
+      callback("Please enter a valid location", undefined);
     } else {
       const coordinates = {
         lat: body.data[0].latitude,
