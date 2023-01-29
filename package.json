@@ -5,8 +5,10 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+
     "start": "node src/app.js",
     "dev": "nodemon app.js -e js,hbs"
+
   },
   "keywords": [
     "Jcube333"
