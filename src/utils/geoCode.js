@@ -1,11 +1,11 @@
 import request from "postman-request";
-import { keys } from "../../keys.js";
+
+// import { keys } from "../../keys.js";
 
 export const geoCode = (location, callback) => {
   const url =
-    "http://api.positionstack.com/v1/forward?access_key=" +
-    keys.geoKey +
-    "&query=" +
+    "http://api.positionstack.com/v1/forward?access_key=2fefe5f463acf9929bc14c0fe75d216c&query=" +
+
     location +
     "&limit=1";
 
