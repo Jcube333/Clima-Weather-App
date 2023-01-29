@@ -11,10 +11,10 @@ export const geoCode = (location, callback) => {
 
   //Using shorthand object property syntax for url
   //Also, destructuring response to get body as a standAlone variable
-  request({ url, json: true }, (error, { body }) => {
+  request({ url, json: true }, (error, { body } = {}) => {
     if (error) {
       callback("Unable to connect to Geolocation Service", undefined);
-    } else if (body.data.length == 0) {
+    } else if (body.error || body.data.length == 0) {
       callback("Please enter a valid location", undefined);
     } else {
       const coordinates = {
