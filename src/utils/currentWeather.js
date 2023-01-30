@@ -1,12 +1,10 @@
 import request from "postman-request";
-import { keys } from "../../keys.js";
+// import { keys } from "../../keys.js";
 
 //Using JS object destructuring to avoid writing coodinates.lat and coordinates.lon
 export const weather = ({ lat, lon }, callback) => {
   const url =
-
     "http://api.weatherstack.com/current?access_key=979a28f45f9f64ed6e1422d95c62fc61&query=" +
-
     lat +
     "," +
     lon;
